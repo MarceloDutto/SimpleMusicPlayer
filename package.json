@@ -1,0 +1,21 @@
+{
+  "name": "simple-music-player",
+  "productName": "Simple Music Player",
+  "version": "0.0.2",
+  "description": "A prototype of a simple music player",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Marcelo Dutto",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.1.1"
+  },
+  "dependencies": {
+    "music-metadata": "^7.14.0",
+    "nedb": "^1.8.0"
+  }
+}
