@@ -351,6 +351,10 @@ openfileButton.addEventListener('click', e => {
     ipcRenderer.send('tryToAddFile')
 });
 
+openfolderButton.addEventListener('click', e => {
+    ipcRenderer.send('tryToOpenFolder')
+});
+
 nextTrackButton.addEventListener('click', () => {
     nextTrack();
 });

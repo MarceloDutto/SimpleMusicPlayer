@@ -3,7 +3,7 @@ const path = require('path');
 
 const { createTopMenu } = require('./menus/top.menu');
 const { loadDatabase, getTrackById } = require('./services/persistence.services');
-const { openFiles, checkFileAccess } = require('./services/files.services');
+const { openFiles, openFolder, checkFileAccess } = require('./services/files.services');
 
 // Global variables
 let mainWindow;
@@ -84,6 +84,10 @@ app.whenReady().then(() => {
 // IPC
 ipcMain.on('tryToAddFile', () => {
     openFiles(mainWindow);
+});
+
+ipcMain.on('tryToOpenFolder', () => {
+    openFolder(mainWindow);
 });
 
 ipcMain.handle('checkFilePath', async (event, filePath) => {
