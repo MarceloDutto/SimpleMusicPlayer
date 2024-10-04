@@ -1,4 +1,17 @@
-const Datastore = require('nedb'), database = new Datastore({filename: './src/dao/database/data.db', autoload: true});
+const path = require('path');
+const { app } = require('electron');
+const fs = require('fs');
+
+const documentsPath = app.getPath('documents');
+const appFolderPath = path.join(documentsPath, 'SimpleMusicPlayer');
+
+if (!fs.existsSync(appFolderPath)) {
+    fs.mkdirSync(appFolderPath);
+};
+
+const dbPath = path.join(appFolderPath, 'data.db');
+
+const Datastore = require('nedb'), database = new Datastore({filename: dbPath, autoload: true});
 
 class dataManager {
 

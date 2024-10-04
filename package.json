@@ -1,21 +1,36 @@
 {
   "name": "simple-music-player",
   "productName": "Simple Music Player",
-  "version": "0.0.2",
-  "description": "A prototype of a simple music player",
+  "version": "1.0.0",
+  "description": "A windows desktop simple music player",
   "main": "./src/main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "Marcelo Dutto",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^29.1.1"
+    "electron": "^29.1.1",
+    "electron-builder": "^25.1.7"
   },
   "dependencies": {
     "music-metadata": "^7.14.0",
     "nedb": "^1.8.0"
+  },
+  "build": {
+    "appId": "com.MarceloDutto.SimpleMusicPlayer",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "uninstallDisplayName": "SimpleMusicPlayer-uninstaller",
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
